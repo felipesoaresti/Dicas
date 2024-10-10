@@ -1,2 +1,3 @@
 # Dicas
-Dicas linux
+
+Dicas uteis e anotações 
