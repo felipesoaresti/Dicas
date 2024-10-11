@@ -4,9 +4,9 @@ Exemplo curl.cfg
     thl-cmk.hopto.org|curl_item_2|case_multiline|
     checkmk.com|curl_item_3|nocase_nomultiline|
 
-# Em cada linha você tem os três campos service_name, curl_item_# e regex_options. Esses campos são separados por |. Não são permitidos comentários ou linhas vazias.
+Em cada linha você tem os três campos service_name, curl_item_# e regex_options. Esses campos são separados por |. Não são permitidos comentários ou linhas vazias.
 
-# Você precisa criar alguns arquivos adicionais no subdiretório curl no diretório de configuração do agente check_mk (Linux: /etc/check_mk/curl, Windows: C:\ProgramData\checkmk\agent\config\curl). curl_item_# é igual à segunda opção de cada linha no arquivo de configuração curl.cfg
+Você precisa criar alguns arquivos adicionais no subdiretório curl no diretório de configuração do agente check_mk (Linux: /etc/check_mk/curl, Windows: C:\ProgramData\checkmk\agent\config\curl). curl_item_# é igual à segunda opção de cada linha no arquivo de configuração curl.cfg
 
 curl_item_#.options → opções cURL linha por linha
 
