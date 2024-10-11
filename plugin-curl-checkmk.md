@@ -37,12 +37,12 @@ Aqui um exemplo desse arquivo de opções
         # This file is managed via WATO, do not edit manually or you
         # lose your changes next time when you update the agent.
 
---url "https://wiki.haha.com.br/mediawiki"
---compressed
---connect-timeout 10
---user-agent "('user_agent', 'curl-checkmk')"
---location
---head
---cacert /etc/check_mk/curl/curl_item_1.ca_cert 
---output /var/tmp/curl_output
+        --url "https://wiki.haha.com.br/mediawiki"
+        --compressed
+        --connect-timeout 10
+        --user-agent "('user_agent', 'curl-checkmk')"
+        --location
+        --head
+        --cacert /etc/check_mk/curl/curl_item_1.ca_cert 
+        --output /var/tmp/curl_output
 
