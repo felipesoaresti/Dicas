@@ -25,6 +25,9 @@ Esses registros, conhecidos como *Resource Records (RR)*, incluem informações 
 ### Exemplo de um Resource Record:
 <name> <ttl> <class> <type> <rdlength> <radata>
 
+yaml
+Copiar código
+
 Quando você acessa um site, o navegador consulta o sistema operacional para recuperar o IP correspondente ao domínio. Se o registro já está no cache local, a resposta é mais rápida. Caso contrário, o sistema realiza uma consulta ao servidor DNS público.
 
 ### Problemas no Cache DNS
@@ -38,58 +41,70 @@ Distribuições Linux usam diferentes resolvers DNS, como `systemd-resolved` ou 
 
 ```bash
 sudo lsof -i :53 -S
-
+```
 Este comando lista os serviços que estão escutando na porta 53, utilizada pelo DNS.
-
 Ubuntu 18.04 ou superior: Geralmente utiliza o systemd-resolved.
 Versões anteriores: Podem usar dnsmasq.
 How to Flush the DNS Cache on Linux?
 Flush DNS Cache Using systemd-resolved
 Se o serviço systemd-resolved está ativo, execute um dos seguintes comandos:
 
+```bash
 sudo resolvectl flush-caches
 sudo systemd-resolve --flush-caches
-
+```
 Para verificar o tamanho atual do cache após o flush, use:
 
+```bash
 sudo systemd-resolve --statistics
 sudo resolvectl statistics
+```
 
 Clear DNS Cache Using Signals
 Outra forma de limpar o cache DNS com systemd-resolved é enviar um sinal USR2:
 
+```bash
 sudo killall -USR2 systemd-resolved
+```
 Para verificar o estado atual no journal, envie o sinal USR1:
 
+```bash
 sudo killall -USR1 systemd-resolved
 sudo journalctl -r -u systemd-resolved
+```
 
 Flush DNS Cache Using dnsmasq
 Se o sistema utiliza dnsmasq, execute o seguinte comando:
 
+```bash
 sudo killall -HUP dnsmasq
-
+```
 Para registrar as estatísticas no arquivo de log e verificar o tamanho do cache:
 
+```bash
 sudo killall -USR1 dnsmasq
 tail -f n1000 /var/log/syslog | grep "cache size"
-
+```
 Se o dnsmasq estiver configurado como serviço, reiniciá-lo também limpa o cache:
 
+```bash
 sudo systemctl restart dnsmasq
 sudo service dnsmasq restart
-
+```
 Clear DNS Cache Using nscd in RedHat
 No RedHat, o daemon nscd é usado como cache DNS. Para limpar o cache, reinicie o serviço com um dos seguintes comandos:
 
+```bash
 sudo systemctl restart nscd.service
 sudo service nscd restart
-
+```
 Clear DNS Cache on Google Chrome
 O navegador Google Chrome também armazena seu próprio cache DNS. Para limpá-lo, siga os passos abaixo:
 
 Abra o Chrome e digite na barra de endereços:
-
+```bash
 chrome://net-internals/#dns
-
+```
 Clique no botão Clear host cache.
+
+Artigo retirado de https://www.siteground.com/kb/flush-dns-cache-in-linux/
