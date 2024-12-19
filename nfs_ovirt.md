@@ -31,3 +31,9 @@
 Converter o disco vmdk qcow2
 
     qemu-img convert -cpf vmdk focus01-0.vmdk -O qcow2 -o preallocation=off  focus01-0.qcow2
+Firewall-cmd para o compartilhamento NFS 
+
+    firewall-cmd --permanent --add-service=nfs
+    firewall-cmd --permanent --add-service=mountd
+    firewall-cmd --permanent --add-service=rpc-bind
+    firewall-cmd --reload
