@@ -1,0 +1,6 @@
+setx VAGRANT_SERVER_URL "https://app.vagrantup.com"
+
+
+Feche e reabra o PowerShell, depois:
+
+vagrant box add ubuntu/jammy64 --provider virtualbox
