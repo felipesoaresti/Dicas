@@ -78,3 +78,12 @@ wsl --export Ubuntu-22.04 C:\backup\ubuntu.tar
 Importar como uma nova distro com outro nome:
 
 wsl --import Ubuntu-Test C:\WSL\UbuntuTest C:\backup\ubuntu.tar --version 2
+
+Isso mostra todas as distros que você pode instalar.
+
+	wsl -l -o
+	
+Instalar uma distro disponível
+Depois que ver a lista, basta instalar, por exemplo:
+
+	wsl --install -d Ubuntu-22.04
