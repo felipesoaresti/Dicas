@@ -1,4 +1,4 @@
-# Expansão de Disco no Ubuntu 24.04 (sem reiniciar)
+# Expansão de Disco LVM (sem reiniciar)
 
 Guia rápido para expandir partição e sistema de arquivos após aumentar o disco da VM.
 
@@ -21,6 +21,11 @@ sudo apt update && sudo apt install -y cloud-guest-utils
 sudo growpart /dev/sda 3
 ````
 🔹 Troque o número 3 pelo número da partição onde está o root ou LVM.
+
+🔹 Se não aparecer force o rescan 
+````
+echo 1 | sudo tee /sys/class/block/nvme0n1/device/rescan
+````
 
 3. Expandir o sistema de arquivos
 Agora depende de como está o layout do disco:
