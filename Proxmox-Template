@@ -1,0 +1,30 @@
+apt install libguestfs-tools -y
+
+virt-customize --add jammy-server-cloudimg-amd64.img \
+ --install qemu-guest-agent
+
+qm create 9002 \
+ --name ubuntu-2204-cloud-init \
+ --numa 0 \
+ --ostype l26 \
+  --cpu cputype=host \
+  --cores 2 \
+  --sockets 2 \
+  --memory 6144 \
+  --net0 virtio,bridge=vmbr0
+
+qm importdisk 9001 /tmp/jammy-server-cloudimg-amd64.img local-lvm
+
+qm set 9001 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9001-disk-0
+
+qm set 9001 --ide2 local-lvm:cloudinit
+
+qm set 9001 --boot c --bootdisk scsi0
+
+qm set 9001 --serial0 socket --vga serial0
+
+qm set 9001 --agent enabled=1
+
+qm disk resize 9001 scsi0 +100G
+
+qm template 9001
