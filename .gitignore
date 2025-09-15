@@ -1,0 +1,56 @@
+# Sensitive files - Never commit these
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
+secret/
+.env
+.env.*
+config.local.*
+*password*
+*passwd*
+*secret*
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Personal info
+*@*.com
+*@*.br
+*@*.org
+
+# IP addresses and domains (example patterns)
+# Uncomment and modify as needed for your specific patterns
+# 192.168.*
+# 10.0.*
+# *.internal
+# *.local
+
+# Database dumps
+*.sql
+*.db
+*.sqlite
+
+# Logs that might contain sensitive data
+*.log
+logs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
