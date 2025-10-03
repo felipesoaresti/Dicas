@@ -88,14 +88,3 @@ Depois que ver a lista, basta instalar, por exemplo:
 
 	wsl --install -d Ubuntu-22.04
 
-Exporte a distro para um .tar:
-
-wsl --export OracleLinux_9_5 C:\WSL\OracleLinux95.tar
-
-Desregistre a antiga:
-
-wsl --unregister OracleLinux_9_5
-
-Reimporte com o novo nome:
-
-wsl --import Oracle C:\WSL\Oracle C:\WSL\OracleLinux95.tar --version 2
