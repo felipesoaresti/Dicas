@@ -77,10 +77,27 @@ Repositório de anotações, guias e referências rápidas sobre Linux, Kubernet
 
 ## 🔗 Repositórios relacionados
 
+### ☸️ Kubernetes & Containers
+
 | Repo | Descrição |
 |------|-----------|
 | [Cloudflare-Metallb-NginxIngress-Controler](https://github.com/felipesoaresti/Cloudflare-Metallb-NginxIngress-Controler) | Expor homelab atrás de CGNAT com Cloudflare Tunnel + MetalLB + NGINX |
 | [Rancher](https://github.com/felipesoaresti/Rancher) | Cluster RKE2 + Rancher em HA no homelab |
+| [app](https://github.com/felipesoaresti/app) | Apps no Docker Swarm — Grafana, WordPress, HAProxy, BIND |
+
+### 🖥️ Homelab & Infraestrutura
+
+| Repo | Descrição |
+|------|-----------|
+| [Proxmox](https://github.com/felipesoaresti/Proxmox) | Otimizações de cluster Proxmox 2 nós — ZFS, I/O, scripts de automação |
+| [server](https://github.com/felipesoaresti/server) | Serviços base do homelab — Portainer, Pi-hole, Nginx Proxy Manager |
 | [Firewall](https://github.com/felipesoaresti/Firewall) | Scripts iptables para Debian |
 | [scripts](https://github.com/felipesoaresti/scripts) | Shell scripts utilitários |
-| [cmdbsyncer-plugins](https://github.com/felipesoaresti/cmdbsyncer-plugins) | Plugins para CMDBSyncer (Checkmk, Netbox) |
+
+### 📊 Monitoramento & Automação
+
+| Repo | Descrição |
+|------|-----------|
+| [Checkmk](https://github.com/felipesoaresti/Checkmk) | Guias de configuração do Checkmk |
+| [cmdbsyncer-plugins](https://github.com/felipesoaresti/cmdbsyncer-plugins) | Plugins para CMDBSyncer (Checkmk, Netbox, VMware) |
+| [ovirt](https://github.com/felipesoaresti/ovirt) | Scripts Python para backup e snapshots em oVirt/RHV |
