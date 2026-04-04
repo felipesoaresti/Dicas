@@ -36,6 +36,7 @@ Repositório de anotações, guias e referências rápidas sobre Linux, Kubernet
 | [portas-abertas.md](linux/portas-abertas.md) | Como verificar portas abertas no sistema |
 | [wsl.md](linux/wsl.md) | Dicas e configurações do WSL (Windows Subsystem for Linux) |
 | [dns-flush-cache.md](linux/dns-flush-cache.md) | Como limpar o cache DNS em diferentes sistemas |
+| [locale-pt_BR-fix.md](linux/locale-pt_BR-fix.md) | Locale pt_BR.UTF-8 não gerado no Debian — causa e solução via locale-gen |
 
 ---
 
